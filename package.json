@@ -1,0 +1,49 @@
+{
+  "name": "nico-ongaku",
+  "main": "index.js",
+  "version": "0.0.1",
+  "description": "A module to bulk fetch videos from niconico and extract audio.",
+  "main": "index.js",
+  "bin": {
+    "nico" : "./bin/nico.js"
+  },
+  "engines": { "node": "*" },
+  "keywords": [
+    "niconico"
+  ],
+  "homepage": "https://github.com/eric-dango/nico-ongaku",
+  "author": {
+    "name": "xinyi dong",
+    "email": "xinyi.dong@gmail.com",
+    "url": "http://www.dangoeric.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eric-dango/nico-ongaku"
+  },
+  "dependencies": {
+    "archiver": "*",
+    "async": "0.9.0",
+    "cheerio": "0.12.x",
+    "commander": "*",
+    "compression": "1.1.0",
+    "config": "~1.10.0",
+    "cookie-parser": "1.3.3",
+    "cookie-session": "1.0.2",
+    "is_js": "*",
+    "lodash": "^2.4.1",
+    "moment": "*",
+    "morgan": "1.3.1",
+    "nconf": "~0.7.x",
+    "randomstring": "*",
+    "request": "~2.53.0",
+    "underscore.string": "~2.3.3"
+  },
+  "devDependencies": {
+    "supertest": "0.13.0",
+    "should": "4.0.4",
+    "mocha": "1.21.4",
+    "nodemon": "1.2.1"
+  },
+  "preferGlobal": "true"
+}
