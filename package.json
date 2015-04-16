@@ -1,7 +1,7 @@
 {
   "name": "nico-ongaku",
   "main": "index.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A module to bulk fetch videos from niconico and extract audio.",
   "main": "index.js",
   "bin": {
@@ -14,8 +14,8 @@
   "homepage": "https://github.com/eric-dango/nico-ongaku",
   "author": {
     "name": "xinyi dong",
-    "email": "xinyi.dong@gmail.com",
-    "url": "http://www.dangoeric.com/"
+    "email": "xinyi.dong@hotmail.com",
+    "url": "http://github.com/eric-dango/nico-ongaku"
   },
   "repository": {
     "type": "git",

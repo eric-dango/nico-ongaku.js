@@ -17,7 +17,6 @@ program
   .option('-l, --limit <limit>', 'Limit number of video')
   .option('-z, --zip <zip>', 'Compress or not: Y/N', /^(Y|N)$/i, 'Y')
   .option('-o, --out [path]', 'Output directory')
-  .option('-t, --type <type>', 'Ranking type: daily / weekly / monthly / utami', /^(daily|monthly|weekly|utami)$/i, 'weekly')
 
 //mylist
 program
