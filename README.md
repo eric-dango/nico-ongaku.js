@@ -39,8 +39,9 @@ Options:
 
 **Download video and Extract music in Mylist**
 
+```
 nico mylist [MYLIST ID]  -u YOUR_EMAIL -p YOUR_PASSWORD -o /Users/YOUR_NAME/Music
-
+```
 
 Other Options
 ------------
@@ -51,4 +52,5 @@ Other Options
   -l, --limit <Number>     Limit number of video to download
 ```
 
+*Doesn't work on Windows*
 *水表已拆，不收快递*
