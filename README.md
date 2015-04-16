@@ -1,5 +1,5 @@
 # nico-ongaku
-A module to bulk fetch videos from niconico and extract audio. Support fetching/extract video from ranking board and mylist
+A module to bulk fetch videos from niconico and extract audios. Support fetching/extract video from ranking board and mylist
 
 Installation
 ==========
@@ -37,7 +37,7 @@ Options:
   * monthly
   * utami
 
-**Download video and Extract music in Mylist*
+**Download video and Extract music in Mylist**
 
 nico mylist [MYLIST ID]  -u YOUR_EMAIL -p YOUR_PASSWORD -o /Users/YOUR_NAME/Music
 
@@ -45,8 +45,10 @@ nico mylist [MYLIST ID]  -u YOUR_EMAIL -p YOUR_PASSWORD -o /Users/YOUR_NAME/Musi
 Other Options
 ------------
 
-  -f, --fileName <fileName>  Name for final zipped file
-  -l, --limit <Number>        Limit number of video
+```
+  -f, --fileName <String>  Name for final zipped file
 
+  -l, --limit <Number>     Limit number of video to download
+```
 
 *水表已拆，不收快递*
