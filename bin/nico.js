@@ -15,7 +15,7 @@ program
   .option('-p, --password <password>', 'Nico login password')
   .option('-f, --fileName <fileName>', 'Name for final zipped file')
   .option('-l, --limit <limit>', 'Limit number of video')
-  .option('-z, --zip <zip>', 'Compress or not: Y/N', /^(Y|N)$/i, 'Y')
+  .option('-z, --zip <zip>', 'Compress or not: Y/N', /^(Y|N)$/i, 'N')
   .option('-o, --out [path]', 'Output directory')
 
 //mylist
@@ -66,17 +66,19 @@ function getNicoOptions() {
       nickname: ""
     },
     destDir:  program.out || process.cwd() + '/',
-    tempDir:  process.cwd() + '/',
+    tempDir:  program.out || process.cwd() + '/',
     fileName: program.fileName || 'default',
     log:      true,
-    sync:     true
+    sync:     true,
+    isZip:    program.zip === 'Y'
   }
 }
 
 function processDirectExtract (videoList) {
   if(validation()) {
-    var options = getNicoOptions();
+    var options       = getNicoOptions();
     options.videoList = videoList;
+    
     console.log('>>> Start processing');
     processVideo(options, function(err, result) {
       if(err) {
@@ -94,7 +96,7 @@ function processRankExtract (rankType) {
     var options      = getNicoOptions();
     options.type     = rankType;
     options.download = true;
-    options.limit    = program.limit || 5;
+    options.limit    = program.limit;
 
     console.log('>>> Start processing');
     processRank(options, function(err, result) {
@@ -113,7 +115,7 @@ function processMylistExtract (mylistId) {
     var options      = getNicoOptions();
     options.mylistId = mylistId;
     options.download = true;
-    options.limit    = program.limit || 5;
+    options.limit    = program.limit;
 
     console.log('>>> Start processing');
     processMylist(options, function(err, result) {

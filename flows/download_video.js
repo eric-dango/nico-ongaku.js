@@ -3,6 +3,7 @@ var cheerio = require('cheerio');
 var fs      = require('fs');
 var exec    = require('child_process').exec;
 var spawn   = require('child_process').spawn;
+var ProgressBar = require('progress');
 
 module.exports = function (options) {
   return function (previousObj, callback) {
@@ -37,17 +38,31 @@ module.exports = function (options) {
         previousObj.prevError = {skip: true, message: 'Error! Download failed'};
         return callback(null, previousObj);
       }
+      
       var size = parseInt(response.headers['content-length'], 10);
+
+      //Download progress bar
       if(options.log) {
-        console.log('    Download started! size:' + size);
+        console.log();
+        var bar = new ProgressBar('    Downloading [:bar] :percent :etas', {
+          complete: '=',
+          incomplete: ' ',
+          width: 20,
+          total: size
+        });
+
+        response.on('data', function (chunk) {
+          bar.tick(chunk.length);
+        });
+
+        response.on('end', function () {
+          console.log('\n');
+        });
       }
+
     }).on('end', function() {
-      if(options.log) {
-        console.log('    Download completed!');
-      }
       var result = {};
       result.jar = jar;
-
       callback(null, result);
     })
     .pipe(fs.createWriteStream(options.tempDir + previousObj.videoTitle + '.flv'));

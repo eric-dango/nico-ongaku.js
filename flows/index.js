@@ -7,7 +7,7 @@ module.exports = function (options) {
     download_video   : require('./download_video')(options),
     convert_audio    : require('./convert_audio')(options),
     compress         : require('./compress')(options),
-    rmdir            : require('./rmdir')(options),
-    //ranking          : require('./ranking')(options)
+    renameDir        : require('./renameDir')(options),
+    rmdir            : require('./rmdir')(options)
   }
 }

@@ -2,12 +2,11 @@ var fs        = require('fs');
 var exec      = require('child_process').exec;
 var spawn     = require('child_process').spawn;
 var zipstream = require('archiver');
-var archiver  = require('async');
+var archiver  = require('archiver');
 
 module.exports = function (options) {
   return function (previousObj, callback) {
     var tempPath = options.tempDir || 'defaultPath';
-    var archiver = require('archiver');
     var hasItem  = false;
 
     try{
