@@ -2,7 +2,6 @@ var fs = require('fs');
 
 module.exports = function (options) {
   return function (previousObj, callback) {
-      console.log("--------in rename");
     if(options.sync) {
       try {
         fs.renameSync(options.tempDir, options.destDir + options.fileName);

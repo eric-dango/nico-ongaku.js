@@ -50,7 +50,10 @@ Other Options
   -f, --fileName <String>  Name for final zipped file
 
   -l, --limit <Number>     Limit number of video to download
+
+  -z, --zip <Y|N>          Compress the file into .zip
 ```
 
 *Doesn't work on Windows*
+
 *水表已拆，不收快递*

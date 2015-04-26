@@ -22,7 +22,8 @@ module.exports = function (options) {
         previousObj.prevError = {skip: true, message: 'Error! GET video source page'};
         return callback(null, previousObj);
       } else {
-        var flvUrl = decodeURIComponent(/url=([^&]+)/.exec(body)[1]);
+        var urlComponent = /url=([^&]+)/.exec(body) || [];
+        var flvUrl = decodeURIComponent(urlComponent[1] || '');
         if(flvUrl) {
           var result = {};
           var nicoHeader = response.req._headers.cookie;
