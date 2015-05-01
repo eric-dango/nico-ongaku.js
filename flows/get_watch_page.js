@@ -38,7 +38,7 @@ module.exports = function (options, videoId) {
         result.jar = jar;
 
         result.videoTitle = $('h2 .videoHeaderTitle').text();
-        result.videoTitle = result.videoTitle.replace(/\//, "");
+        result.videoTitle = result.videoTitle.replace(/\//g, "");
         result.videoId = videoId;
         result.fetchVideoUrl = 'http://flapi.nicovideo.jp/api/getflv/' + videoId + (/^nm/.test(videoId) ? '?as3=1' : '');
         if(options.log) {
