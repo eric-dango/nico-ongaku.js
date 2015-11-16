@@ -14,7 +14,7 @@ module.exports = function (options) {
     var nickname   = options.nicoCredential.nickname;
     
     request({
-        uri     : loginUrl,
+        uri     : 'https://account.nicovideo.jp' + loginUrl,
         method  : 'POST',
         jar     : jar,
         followAllRedirects : true,

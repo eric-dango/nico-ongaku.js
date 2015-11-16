@@ -12,6 +12,7 @@ module.exports = function (options) {
     }
     var jar       = previousObj.jar;
     var flvUrl    = previousObj.flvUrl;
+    var title     = (previousObj.videoTitle || 'tmpvideo').replace(/\//g, ' ');
     if(!flvUrl) {
       previousObj.prevError = {skip: true, message: 'Error! Invalid download URL'};
       return callback(null, previousObj);
@@ -65,7 +66,7 @@ module.exports = function (options) {
       result.jar = jar;
       callback(null, result);
     })
-    .pipe(fs.createWriteStream(options.tempDir + previousObj.videoTitle + '.flv'));
+    .pipe(fs.createWriteStream(options.tempDir + title + '.flv'));
 
   }
 }

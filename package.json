@@ -1,7 +1,7 @@
 {
   "name": "nico-ongaku",
   "main": "index.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A module to bulk fetch videos from niconico and extract audio.",
   "main": "index.js",
   "bin": {
